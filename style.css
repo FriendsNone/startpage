@@ -1,36 +1,83 @@
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
 
-html, body{
+html, body {
 	margin: 0;
 	padding: 0;
 	background-color: #151515;
-	background-image: url('back.jpg');
-	background-repeat: space;
 	color: #FFFFFF;
-	font-size: xx-large;
+	font-family: 'Roboto';
+	font-size: 18px;
 }
 
 * {
-	font-family: 'Noto Sans';
-	font-weight: 100;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+div {
+	z-index: 2;
+}
+
+.background {
+	background: url(test.jpg) no-repeat center center fixed; 
+	background-size: cover;
+	filter: blur(3px);
+	display: block;
+	position: fixed;
+	left: 0;
+	right: 0;
+	height: 100%;
+	z-index: 1;
+}
+
+#container {
+	position: absolute;
+    padding: 0 20px 0 20px;
+    top: 18%;
+    left: 0;
+    right: 0;
+	margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    height: auto;
+}
+
+#header {
+    background-color: #1b1b1b;
+    margin: 4px;
+    padding: 8px;
+}
+
+#time {
+	font-size: 72px;
+}
+
+#query {
+	font-size: 72px;
+}
+
+#search {
+	font-family: Roboto;
+    color: #FFFFFF;
+    text-align: right;
+    margin-top: 200px;
+
+    margin-bottom: -4px;
+    margin-left: -3px;
 }
 
 form {
 	display: inline;
+
 }
 
 input {
-	background: none;
-	font-size: xx-large;
-	display: inline;
-	border: none;
-	color: #FFF;
-}
-
-.wrapper {
-	background-color: #151515;
-    display: flex;
-    align-items: centre;
-    justify-content: centre;
-    height: 100%;
+    display: inline;
+	background: rgba(0, 0, 0, 0);
+    border: none;
+	text-align: right;
+    font-family: Roboto;
+    color: #FFFFFF;
+    font-size: 18px;
 }
