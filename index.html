@@ -43,7 +43,7 @@
             nday = weekday[d.getDay()];
             nmonth = month[d.getMonth()];
 
-            document.getElementById('time').innerHTML = nhour + ":" + nmin + ":" + nsec;
+            document.getElementById('time').innerHTML = "It's " + nhour + ":" + nmin + ":" + nsec;
             document.getElementById('date').innerHTML = nday + ", " + nmonth + " " + ndaynumber;
 
             setTimeout("GetClock()", 1000);
