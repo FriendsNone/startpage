@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <head>
-    <title>Welcome home, good hunter.</title>
+    <title>Hello!</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript">
@@ -63,14 +63,9 @@
     </div>
 
     <div id="search">
-        <script>
-            function onBlur(el) { if (el.value == '') { el.value = el.defaultValue; } }
-            function onFocus(el) { if (el.value == el.defaultValue) { el.value = ''; } }
-        </script>
-
         <p id="query">Search</p>
         <form method="get" action="https://www.google.com/search">
-            <input type="text" value="type here" name="q" onblur="onBlur(this)" onfocus="onFocus(this)" />
+            <input type="text" value="type here" name="q"/>
         </form>
     </div>
 </div>
