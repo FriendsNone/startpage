@@ -74,6 +74,10 @@ div {
     margin-left: -3px;
 }
 
+textarea:focus, input:focus{
+    outline: none;
+}
+
 form {
 	display: inline;
 
