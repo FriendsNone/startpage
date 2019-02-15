@@ -22,7 +22,7 @@ div {
 }
 
 .background {
-	background: url(test.jpg) no-repeat center center fixed; 
+	background: url(bg.jpg) no-repeat center center fixed; 
 	background-size: cover;
 	filter: blur(3px);
 	display: block;
