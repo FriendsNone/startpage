@@ -51,7 +51,60 @@
             setTimeout("GetClock()", 1000);
         }
 
-        window.onload = GetClock;
+        window.onload = loadShortcuts;
+        
+        function addLink() {
+            document.getElementById("links").innerHTML = '<p>Add Shortcut Link</p><input type="text" id="linkName" class="linkText" placeholder="Name"/><br><input type="text" id="linkUrl" class="linkText" placeholder="Address"/><br><input class="linkText" type="button" value=" Save " onclick="saveLink()" />';
+        }
+        
+        function saveLink() {
+            var name = document.getElementById('linkName').value;
+            var url = document.getElementById('linkUrl').value;
+            var customLinks = 0;
+            
+            if (localStorage.getItem('customLinks') != null) {
+                customLinks = localStorage.getItem('customLinks');
+                
+            }
+            
+            localStorage.setItem('customLinks', customLinks + 1);
+            localStorage.setItem('LinkUrl' + customLinks, url);
+            localStorage.setItem('LinkName' + customLinks, name);
+            
+            location.reload();
+        }
+        
+        function loadShortcuts() {
+            var end = '<a onclick="addLink()" style="text-decoration:underline;">+</a> <a onclick="killLinks()" style="text-decoration:underline;">-</a>';
+            var customLinks = 0;
+            
+            if (localStorage.getItem('customLinks') != null) {
+                customLinks = Number(localStorage.getItem('customLinks'));
+            }
+            
+            var links = '';
+            
+            var i;
+            for (i = 0; i < customLinks; i++) { 
+                if (localStorage.getItem('LinkUrl' + i) != null) {
+                    links += '<a href="' + localStorage.getItem('LinkUrl' + i) + '">';
+                    links += localStorage.getItem('LinkName' + i) + '</a> ';
+                }
+            }
+            
+            links += end;
+            
+            console.log(links);
+            
+            document.getElementById('links').innerHTML=links;
+            
+            GetClock();
+        }
+        
+        function killLinks() {
+            localStorage.clear();
+            location.reload();
+        }
     </script>
 </head>
 <body>
@@ -62,7 +115,7 @@
     <div id="clock">
         <p id="date"></p>
         <p id="time"></p>
-        <p><a href="https://github.com">Github</a> <a href="https://youtube.com">Youtube</a> <a href="https://old.reddit.com">Reddit</a></p>
+        <p id="links"></p>
     </div>
 
     <div id="search">

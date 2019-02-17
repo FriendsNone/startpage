@@ -89,3 +89,8 @@ input {
     color: #FFFFFF;
     font-size: 18px;
 }
+
+.linkText {
+    text-align: left !important;
+    border: 1px solid rgba(255,255,255,0.5);
+}
