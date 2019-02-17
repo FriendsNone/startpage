@@ -74,8 +74,22 @@
             location.reload();
         }
         
-        function loadShortcuts() {
-            var end = '<a onclick="addLink()" style="text-decoration:underline;cursor:pointer;">+</a> <a onclick="killLinks()" style="text-decoration:underline;cursor:pointer;">-</a>';
+        function displayBtns() {
+            if (document.getElementById('links').innerHTML.includes('addLink')) {
+                console.log(1);
+                var end = '<img src="cog.png" height="16px" onclick="displayBtns()" />';
+                document.getElementById('links').innerHTML= buildLinkString(end);
+            } else {
+                console.log(2);
+                var end = '<img src="cog.png" height="16px" onclick="displayBtns()" />';
+                var btns = ' <a onclick="addLink()" style="text-decoration:underline;cursor:pointer;">+</a> <a onclick="killLinks()" style="text-decoration:underline;cursor:pointer;">-</a> ';
+                var input = btns + end;
+                document.getElementById('links').innerHTML= buildLinkString(input);  
+            }
+            
+        }
+        
+        function buildLinkString(input) {
             var customLinks = 0;
             
             if (localStorage.getItem('customLinks') != null) {
@@ -92,11 +106,16 @@
                 }
             }
             
-            links += end;
+            links += input;
             
-            console.log(links);
+            return links;
+        }
+        
+        function loadShortcuts() {
+            var end = '<img src="cog.png" height="16px" onclick="displayBtns()" />';
             
-            document.getElementById('links').innerHTML=links;
+            
+            document.getElementById('links').innerHTML= buildLinkString(end);
             
             GetClock();
         }
