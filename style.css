@@ -4,13 +4,13 @@ html, body {
 	margin: 0;
 	padding: 0;
 	background-color: #151515;
-	color: #FFFFFF;
+	color: white;
 	font-family: 'Roboto';
 	font-size: 18px;
 }
 
 a {
-    color:white;
+    color: inherit;
 }
 
 * {
@@ -63,10 +63,9 @@ div {
 
 #search {
 	font-family: Roboto;
-    color: #FFFFFF;
     text-align: right;
     margin-top: 200px;
-
+    color: white;
     margin-bottom: -4px;
     margin-left: -3px;
 }
@@ -86,7 +85,7 @@ input {
     border: none;
 	text-align: right;
     font-family: Roboto;
-    color: #FFFFFF;
+    color: white;
     font-size: 18px;
 }
 
