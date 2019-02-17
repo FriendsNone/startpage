@@ -46,6 +46,10 @@ function GetClock() {
   function addLink() {
       document.getElementById("links").innerHTML = '<p>Add Shortcut Link</p><input type="text" id="linkName" class="linkText" placeholder="Name"/><br><input type="text" id="linkUrl" class="linkText" placeholder="Address"/><br><input class="linkText" type="button" value=" Save " onclick="saveLink()" />';
   }
+
+  function editWallpaper() {
+      document.getElementById("links").innerHTML = '<p>Edit Wallpaper URL</p><input type="text" id="wallpaperURL" class="linkText" placeholder="Image URL"/><br><input class="linkText" type="button" value=" Save " onclick="saveWallpaper()" />';
+  }
         
   function saveLink() {
       var name = document.getElementById('linkName').value;
@@ -63,6 +67,14 @@ function GetClock() {
       
       location.reload();
   }
+
+  function saveWallpaper() {
+      var url = document.getElementById('wallpaperURL').value;
+      
+      localStorage.setItem('wallpaper', url);
+      
+      location.reload();
+  }
   
   function displayBtns() {
       if (document.getElementById('links').innerHTML.includes('addLink')) {
@@ -70,7 +82,7 @@ function GetClock() {
           document.getElementById('links').innerHTML= buildLinkString(end);
       } else {
           var end = '<img src="cog.png" height="16px" onclick="displayBtns()" />';
-          var btns = ' | <a onclick="addLink()" style="text-decoration:underline;cursor:pointer;">Add</a> <a onclick="killLinks()" style="text-decoration:underline;cursor:pointer;">Clear</a> ';
+          var btns = ' | <a onclick="addLink()" style="text-decoration:underline;cursor:pointer;">Add</a> <a onclick="killLinks()" style="text-decoration:underline;cursor:pointer;">Clear</a> <a onclick="editWallpaper()" style="text-decoration:underline;cursor:pointer;">Wallpaper</a> ';
         var input = btns + end;
         document.getElementById('links').innerHTML= buildLinkString(input);  
     }
@@ -105,7 +117,15 @@ function loadShortcuts() {
     
     document.getElementById('links').innerHTML= buildLinkString(end);
     
+    loadWallpaper()
+    
     GetClock();
+}
+
+function loadWallpaper() {
+    if (localStorage.getItem('wallpaper') != null) {
+        document.getElementById('background').style.backgroundImage = "url('" + localStorage.getItem('wallpaper') + "')";
+    }
 }
 
 function killLinks() {

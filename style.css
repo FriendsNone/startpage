@@ -23,10 +23,10 @@ div {
 	z-index: 2;
 }
 
-.background {
+#background {
 	background: url(bg.jpg) no-repeat center center fixed; 
 	background-size: cover;
-	filter: blur(3px);
+	/* filter: blur(3px); */
 	display: block;
 	position: fixed;
 	left: 0;
