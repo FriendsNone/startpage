@@ -75,7 +75,7 @@
         }
         
         function loadShortcuts() {
-            var end = '<a onclick="addLink()" style="text-decoration:underline;">+</a> <a onclick="killLinks()" style="text-decoration:underline;">-</a>';
+            var end = '<a onclick="addLink()" style="text-decoration:underline;cursor:pointer;">+</a> <a onclick="killLinks()" style="text-decoration:underline;cursor:pointer;">-</a>';
             var customLinks = 0;
             
             if (localStorage.getItem('customLinks') != null) {
