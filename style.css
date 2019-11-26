@@ -4,9 +4,13 @@ html, body {
 	margin: 0;
 	padding: 0;
 	background-color: #151515;
-	color: #FFFFFF;
+	color: white;
 	font-family: 'Roboto';
 	font-size: 18px;
+}
+
+a {
+    color: inherit;
 }
 
 * {
@@ -19,10 +23,10 @@ div {
 	z-index: 2;
 }
 
-.background {
-	background: url(test.jpg) no-repeat center center fixed; 
+#background {
+	background: url(bg.jpg) no-repeat center center fixed; 
 	background-size: cover;
-	filter: blur(3px);
+	/* filter: blur(3px); */
 	display: block;
 	position: fixed;
 	left: 0;
@@ -59,12 +63,15 @@ div {
 
 #search {
 	font-family: Roboto;
-    color: #FFFFFF;
     text-align: right;
     margin-top: 200px;
-
+    color: white;
     margin-bottom: -4px;
     margin-left: -3px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
 
 form {
@@ -78,6 +85,11 @@ input {
     border: none;
 	text-align: right;
     font-family: Roboto;
-    color: #FFFFFF;
+    color: white;
     font-size: 18px;
+}
+
+.linkText {
+    text-align: left !important;
+    border: 1px solid rgba(255,255,255,0.5);
 }
