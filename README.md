@@ -1,5 +1,5 @@
 # startpage
+![screenshot](ss.png)
+A clean, simple, new tab page. Clone or see it live [here](https://doofitator.github.io/startpage/)
 
-## Forked from FriendsNone so I could add it to github Pages & make a few changes :)
-
-![screenshot](https://doofitator.github.io/apps/images/startpage/img1.png)
+Note: This repo is years old. A much updated version is comming in the far future.
